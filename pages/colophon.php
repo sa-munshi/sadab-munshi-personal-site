@@ -46,15 +46,15 @@ $sections = [
     <hr>
     
     <?php foreach ($sections as $section_title => $items): ?>
-    <section class="list-section" style="margin-bottom: 2.5rem;">
-      <h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-text);"><?php echo e($section_title); ?></h2>
+    <section class="list-section">
+      <h2><?php echo e($section_title); ?></h2>
       <ul style="list-style: none; padding: 0;">
         <?php foreach ($items as $item): ?>
         <li style="margin-bottom: 1rem; display: flex; gap: 0.75rem;">
-          <span style="color: var(--color-accent);">→</span>
+          <span style="color: var(--color-primary);">→</span>
           <div>
             <strong><?php echo e($item['label']); ?>:</strong> <?php echo $item['value']; ?>
-            <p style="margin: 0.25rem 0 0 0; font-size: 0.875rem; color: var(--color-text-secondary);"><?php echo $item['desc']; ?></p>
+            <p style="margin: 0.25rem 0 0 0; font-size: var(--text-sm); color: var(--color-text-secondary);"><?php echo $item['desc']; ?></p>
           </div>
         </li>
         <?php endforeach; ?>
@@ -63,43 +63,43 @@ $sections = [
     <?php endforeach; ?>
     
     <!-- Hosting Section -->
-    <section class="list-section" style="margin-bottom: 2.5rem;">
-      <h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-text);">Hosting</h2>
+    <section class="list-section">
+      <h2>Hosting</h2>
       <ul style="list-style: none; padding: 0;">
         <li style="margin-bottom: 1rem; display: flex; gap: 0.75rem;">
-          <span style="color: var(--color-accent);">→</span>
+          <span style="color: var(--color-primary);">→</span>
           <div>
             <strong>Domain:</strong> <code>sadabmunshi.online</code>
-            <p style="margin: 0.25rem 0 0 0; font-size: 0.875rem; color: var(--color-text-secondary);">Personal domain. Easy to remember.</p>
+            <p style="margin: 0.25rem 0 0 0; font-size: var(--text-sm); color: var(--color-text-secondary);">Personal domain. Easy to remember.</p>
           </div>
         </li>
         <li style="margin-bottom: 1rem; display: flex; gap: 0.75rem;">
-          <span style="color: var(--color-accent);">→</span>
+          <span style="color: var(--color-primary);">→</span>
           <div>
             <strong>Hosting:</strong> <a href="https://www.infinityfree.com" target="_blank" rel="noopener noreferrer">InfinityFree</a>
-            <p style="margin: 0.25rem 0 0 0; font-size: 0.875rem; color: var(--color-text-secondary);">Free PHP hosting. Reliable and simple.</p>
+            <p style="margin: 0.25rem 0 0 0; font-size: var(--text-sm); color: var(--color-text-secondary);">Free PHP hosting. Reliable and simple.</p>
           </div>
         </li>
         <li style="margin-bottom: 1rem; display: flex; gap: 0.75rem;">
-          <span style="color: var(--color-accent);">→</span>
+          <span style="color: var(--color-primary);">→</span>
           <div>
             <strong>Code Editor:</strong> VS Code
-            <p style="margin: 0.25rem 0 0 0; font-size: 0.875rem; color: var(--color-text-secondary);">Simple, reliable, extensible.</p>
+            <p style="margin: 0.25rem 0 0 0; font-size: var(--text-sm); color: var(--color-text-secondary);">Simple, reliable, extensible.</p>
           </div>
         </li>
         <li style="margin-bottom: 1rem; display: flex; gap: 0.75rem;">
-          <span style="color: var(--color-accent);">→</span>
+          <span style="color: var(--color-primary);">→</span>
           <div>
             <strong>Icons:</strong> <a href="https://feathericons.com/" target="_blank" rel="noopener noreferrer">Feather Icons</a>
-            <p style="margin: 0.25rem 0 0 0; font-size: 0.875rem; color: var(--color-text-secondary);">Clean, minimal, open source SVG icons.</p>
+            <p style="margin: 0.25rem 0 0 0; font-size: var(--text-sm); color: var(--color-text-secondary);">Clean, minimal, open source SVG icons.</p>
           </div>
         </li>
       </ul>
     </section>
     
     <!-- Performance Section -->
-    <section class="list-section" style="margin-bottom: 2.5rem;">
-      <h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-text);">Performance</h2>
+    <section class="list-section">
+      <h2>Performance</h2>
       <ul>
         <li>No external dependencies (except Google Fonts)</li>
         <li>Minimal CSS (~20KB)</li>
@@ -110,8 +110,8 @@ $sections = [
     </section>
     
     <!-- Inspiration Section -->
-    <section class="list-section" style="margin-bottom: 2.5rem;">
-      <h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-text);">Inspiration</h2>
+    <section class="list-section">
+      <h2>Inspiration</h2>
       <p>This site was inspired by people who build calm, thoughtful corners of the internet. Those who prioritize content over flash, simplicity over complexity.</p>
       <p>Special appreciation to:</p>
       <ul>
@@ -126,7 +126,7 @@ $sections = [
     
     <!-- Source Code Section -->
     <section class="list-section">
-      <h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-text);">Source Code</h2>
+      <h2>Source Code</h2>
       <p>The code for this site is available on <a href="https://github.com/sa-munshi/sadabmunshi.online" target="_blank" rel="noopener noreferrer">GitHub</a>. Feel free to explore, learn from it, or use it as inspiration for your own site.</p>
       <p class="text-secondary">If you build something cool, I'd love to see it.</p>
     </section>

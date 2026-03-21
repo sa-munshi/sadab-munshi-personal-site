@@ -14,14 +14,16 @@ $extra_css = '<style>
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: var(--space-xl);
   flex-wrap: wrap;
 }
 
 .about-header__title {
-  font-size: 2rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-medium);
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 /* ======================== Listen Button ======================== */
@@ -30,27 +32,26 @@ $extra_css = '<style>
   align-items: center;
   gap: 0.5rem;
   padding: 10px 20px;
-  background: var(--color-bg-secondary, rgba(0,0,0,0.03));
-  border: 1px solid var(--color-border);
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  background: var(--color-surface-low);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
   color: var(--color-text);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background var(--transition-fast), transform var(--transition-fast);
   width: fit-content;
+  font-family: var(--font-body);
 }
 
 .listen-btn:hover {
-  background: var(--color-text);
-  color: var(--color-bg);
-  border-color: var(--color-text);
+  background: var(--color-surface);
+  transform: translateY(-1px);
 }
 
 .listen-btn.playing {
-  background: var(--color-accent);
-  color: var(--color-bg);
-  border-color: var(--color-accent);
+  background: var(--color-primary);
+  color: #ffffff;
 }
 
 .listen-btn svg {
@@ -60,82 +61,67 @@ $extra_css = '<style>
 
 /* ======================== Story Content ======================== */
 .story {
-  font-size: 1.1rem;
-  line-height: 1.9;
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
   color: var(--color-text);
 }
 
 .story p {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-md);
 }
 
 .story strong {
-  font-weight: 600;
+  font-weight: var(--weight-medium);
   color: var(--color-text);
 }
 
 .story a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s;
+  transition: color var(--transition-fast);
 }
 
 .story a:hover {
-  border-bottom-color: var(--color-accent);
+  color: var(--color-primary-hover);
 }
 
-/* ======================== This Site Section (True Glassmorphism) ======================== */
+/* ======================== This Site Section ======================== */
 .site-note {
-  margin: 3rem 0;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  margin: var(--space-xl) 0;
+  padding: var(--space-lg);
+  background: var(--color-surface-low);
+  border-radius: var(--border-radius);
 }
 
 .site-note h2 {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
   margin: 0 0 0.75rem 0;
   color: var(--color-text);
 }
 
 .site-note p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--color-text);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
   margin: 0;
 }
 
-/* ======================== Credits Section (True Glassmorphism) ======================== */
+/* ======================== Credits Section ======================== */
 .credits {
-  margin: 3rem 0;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  margin: var(--space-xl) 0;
+  padding: var(--space-lg);
+  background: var(--color-surface-low);
+  border-radius: var(--border-radius);
 }
 
 .credits h2 {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
   margin: 0 0 1rem 0;
   color: var(--color-text);
-}
-
-/* Dark Mode Adaptation for Glassmorphism */
-[data-theme="dark"] .site-note,
-[data-theme="dark"] .credits {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 .credits-list {
@@ -149,7 +135,7 @@ $extra_css = '<style>
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
-  font-size: 1rem;
+  font-size: var(--text-sm);
   color: var(--color-text-secondary);
 }
 
@@ -158,20 +144,19 @@ $extra_css = '<style>
 }
 
 .credits-list a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: var(--weight-medium);
 }
 
 .credits-list a:hover {
-  text-decoration: underline;
+  color: var(--color-primary-hover);
 }
 
 /* ======================== Resume CTA ======================== */
 .resume-section {
-  margin-top: 2.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
 }
 
 .resume-btn {
@@ -179,17 +164,20 @@ $extra_css = '<style>
   align-items: center;
   gap: 0.75rem;
   padding: 14px 28px;
-  background: var(--color-text);
-  color: var(--color-bg);
+  background: var(--color-primary);
+  color: #ffffff;
   text-decoration: none;
-  font-weight: 500;
-  border-radius: 12px;
-  transition: all 0.2s ease;
+  font-weight: var(--weight-medium);
+  border-radius: var(--border-radius-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  font-family: var(--font-body);
 }
 
 .resume-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  background: var(--color-primary-hover);
+  color: #ffffff;
 }
 
 .resume-btn svg {
@@ -197,21 +185,14 @@ $extra_css = '<style>
   height: 18px;
 }
 
-/* ======================== Dark Mode ======================== */
-[data-theme="dark"] .listen-btn.playing {
-  background: var(--color-accent);
-  color: var(--color-bg);
-  border-color: var(--color-accent);
-}
-
 /* ======================== Responsive ======================== */
 @media (max-width: 768px) {
   .story {
-    font-size: 1rem;
+    font-size: var(--text-base);
   }
-  
+
   .about-header__title {
-    font-size: 1.75rem;
+    font-size: var(--text-2xl);
   }
 }
 </style>';
@@ -257,7 +238,7 @@ $extra_js = '<script>
 })();
 </script>';
 ?>
-<div class="container page-content" style="max-width: 700px;">
+<div class="container page-content" style="max-width: var(--max-width);">
   
   <!-- Header -->
   <div class="about-header">
@@ -304,7 +285,7 @@ $extra_js = '<script>
   
   <!-- Resume -->
   <div class="resume-section">
-    <p style="font-size: 1rem; color: var(--color-text-secondary); margin-bottom: 1rem;">If you want to see my formal education, timeline, and technical skills, feel free to grab a copy of my resume below.</p>
+    <p class="text-secondary" style="margin-bottom: 1rem;">If you want to see my formal education, timeline, and technical skills, feel free to grab a copy of my resume below.</p>
     <a href="<?php echo config('resume_file'); ?>" download class="resume-btn">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>

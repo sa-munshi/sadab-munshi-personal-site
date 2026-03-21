@@ -56,16 +56,16 @@ $watching = [
     <hr>
     
     <?php foreach ($watching as $section): ?>
-    <section style="margin-bottom: 2.5rem;">
-      <h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-text);"><?php echo e($section['category']); ?></h2>
+    <section class="list-section">
+      <h2><?php echo e($section['category']); ?></h2>
       <ul style="list-style: none; padding: 0;">
         <?php foreach ($section['items'] as $item): ?>
-        <li style="margin-bottom: 1rem; padding: 1rem; background: var(--color-bg-secondary, rgba(0,0,0,0.02)); border-radius: 8px;">
-          <div style="font-weight: 500; margin-bottom: 0.25rem;">
+        <li style="margin-bottom: 1rem; padding: var(--space-md); background: var(--color-surface-low); border-radius: var(--border-radius-sm);">
+          <div style="font-weight: var(--weight-medium); margin-bottom: 0.25rem;">
             <?php echo e($item['title']); ?> 
-            <span style="color: var(--color-text-muted); font-weight: normal;">(<?php echo e($item['year']); ?>)</span>
+            <span style="color: var(--color-text-secondary); font-weight: normal;">(<?php echo e($item['year']); ?>)</span>
           </div>
-          <p style="margin: 0; font-size: 0.875rem; color: var(--color-text-secondary);"><?php echo e($item['note']); ?></p>
+          <p style="margin: 0; font-size: var(--text-sm); color: var(--color-text-secondary);"><?php echo e($item['note']); ?></p>
         </li>
         <?php endforeach; ?>
       </ul>

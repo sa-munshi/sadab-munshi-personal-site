@@ -93,145 +93,120 @@ if (count($recentPosts) < 3) {
 }
 
 $extra_css = '<style>
-/* ======================== GLASSY BACKGROUND ======================== */
-.glassy-bg {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background: 
-    radial-gradient(ellipse at 20% 30%, rgba(167, 139, 250, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 70%, rgba(103, 232, 249, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(251, 146, 60, 0.04) 0%, transparent 60%);
-}
-
 /* ======================== MAIN CONTAINER ======================== */
 .letter-container {
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.7;
-  max-width: 720px;
+  font-family: var(--font-body);
+  line-height: var(--leading-normal);
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 8rem 2rem 6rem;
+  padding: var(--space-3xl) var(--space-md) var(--space-2xl);
   position: relative;
   z-index: 1;
 }
 
 /* ======================== DATE STAMP ======================== */
 .letter-date {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.9rem;
-  font-style: italic;
-  font-weight: 400;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-normal);
   color: var(--color-text-secondary);
-  margin-bottom: 4rem;
+  margin-bottom: var(--space-2xl);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* ======================== OPENING LINE ======================== */
 .letter-opening {
-  font-size: 2rem;
-  line-height: 1.4;
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
   color: var(--color-text);
-  margin: 0 0 3rem 0;
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-xl) 0;
+  font-weight: var(--weight-medium);
+  letter-spacing: -0.02em;
 }
 
 /* ======================== BODY TEXT ======================== */
 .letter-body {
-  font-size: 1.15rem;
-  line-height: 1.85;
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
   color: var(--color-text-secondary);
-  margin-bottom: 3rem;
+  margin-bottom: var(--space-xl);
 }
 
 .letter-body p {
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 var(--space-md) 0;
 }
 
 .letter-body a {
-  color: var(--color-text);
+  color: var(--color-primary);
   text-decoration: none;
-  border-bottom: 2px solid var(--color-accent);
-  font-weight: 600;
-  transition: all 0.2s;
-  padding-bottom: 2px;
+  font-weight: var(--weight-medium);
+  transition: color var(--transition-fast);
 }
 
 .letter-body a:hover {
-  background: var(--color-accent);
-  color: var(--color-bg);
+  color: var(--color-primary-hover);
 }
 
 /* ======================== EDITORIAL SECTION ======================== */
 .editorial-section {
-  margin: 5rem 0;
+  margin: var(--space-3xl) 0;
 }
 
 .section-header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 2rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-lg);
 }
 
 .section-label {
-  font-family: "Courier New", monospace;
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--color-text-muted);
+  letter-spacing: 0.15em;
+  color: var(--color-text-secondary);
   margin: 0;
 }
 
 .section-link {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-primary);
   text-decoration: none;
-  transition: all 0.2s;
+  transition: color var(--transition-fast);
 }
 
 .section-link:hover {
-  color: var(--color-text);
+  color: var(--color-primary-hover);
 }
 
 /* ======================== EDITORIAL CARDS ======================== */
 .digest-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.digest-list > *:nth-child(even) {
+  margin-top: var(--space-lg);
 }
 
 .digest-card {
   display: block;
   text-decoration: none;
-  padding: 2rem 2.25rem;
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: all 0.35s ease;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
   position: relative;
 }
 
-[data-theme="dark"] .digest-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
 .digest-card:hover {
-  background: rgba(255, 255, 255, 0.65);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="dark"] .digest-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .digest-card__meta {
@@ -242,36 +217,37 @@ $extra_css = '<style>
 }
 
 .digest-card__date {
-  font-family: "Courier New", monospace;
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
 }
 
 .digest-card__title {
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
   color: var(--color-text);
-  margin: 0 0 0.75rem 0;
-  line-height: 1.35;
+  margin: 0 0 0.5rem 0;
+  line-height: var(--leading-tight);
 }
 
 .digest-card__excerpt {
-  font-size: 1.05rem;
+  font-size: var(--text-sm);
   color: var(--color-text-secondary);
-  margin: 0 0 1.25rem 0;
-  line-height: 1.6;
+  margin: 0 0 var(--space-sm) 0;
+  line-height: var(--leading-normal);
 }
 
 .digest-card__action {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-primary);
   transition: gap 0.2s;
 }
 
@@ -290,98 +266,60 @@ $extra_css = '<style>
 
 /* ======================== HUMAN TOUCH ======================== */
 .mood-note {
-  margin: 2.5rem 0;
-  padding: 1.25rem 1.75rem;
-  background: rgba(255, 255, 255, 0.3);
-  border-left: 3px solid var(--color-accent);
-  border-radius: 0 8px 8px 0;
-  font-size: 0.95rem;
+  margin: var(--space-xl) 0;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-surface-low);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--text-sm);
   font-style: italic;
   color: var(--color-text-secondary);
-  line-height: 1.6;
-}
-
-[data-theme="dark"] .mood-note {
-  background: rgba(255, 255, 255, 0.03);
+  line-height: var(--leading-normal);
 }
 
 /* ======================== SIGNATURE ======================== */
 .letter-signature {
-  margin-top: 5rem;
+  margin-top: var(--space-3xl);
   text-align: right;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-xl);
 }
 
 .signature-name {
-  font-family: Georgia, serif;
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-medium);
   font-style: italic;
-  margin: 0 0 0.75rem 0;
-  background: linear-gradient(
-    90deg,
-    #1a1a1a 0%,
-    #1a1a1a 30%,
-    #ffffff 50%,
-    #1a1a1a 70%,
-    #1a1a1a 100%
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: cinematic-shimmer 3s linear infinite;
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text);
   display: inline-block;
   letter-spacing: -0.02em;
 }
 
-[data-theme="dark"] .signature-name {
-  background: linear-gradient(
-    90deg,
-    #f0f0f0 0%,
-    #f0f0f0 30%,
-    #888888 50%,
-    #f0f0f0 70%,
-    #f0f0f0 100%
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@keyframes cinematic-shimmer {
-  0% { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
-}
-
 .signature-title {
-  font-family: "Courier New", monospace;
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
   text-transform: uppercase;
-  letter-spacing: 0.3em;
-  color: var(--color-text-muted);
+  letter-spacing: 0.2em;
+  color: var(--color-text-secondary);
   margin: 0;
 }
 
 /* ======================== QUICK LINKS ======================== */
 .quick-links {
-  margin-top: 4rem;
+  margin-top: var(--space-2xl);
   display: flex;
-  gap: 2.5rem;
+  gap: var(--space-lg);
   flex-wrap: wrap;
 }
 
 .quick-link {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
   color: var(--color-text-secondary);
   text-decoration: none;
   position: relative;
-  transition: color 0.2s;
-  padding-bottom: 4px;
+  transition: color var(--transition-fast);
+  padding-bottom: 2px;
 }
 
 .quick-link::after {
@@ -390,148 +328,112 @@ $extra_css = '<style>
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
-  background: var(--color-text);
+  height: 1px;
+  background: var(--color-primary);
   transition: width 0.3s ease;
 }
 
 .quick-link:hover {
-  color: var(--color-text);
+  color: var(--color-primary);
 }
 
 .quick-link:hover::after {
   width: 100%;
 }
 
-/* ======================== TABLET LANDSCAPE ======================== */
+/* ======================== TABLET ======================== */
 @media (min-width: 768px) and (max-width: 1024px) {
   .letter-container {
     max-width: 680px;
-    padding: 6rem 3rem 5rem;
+    padding: var(--space-2xl) var(--space-lg) var(--space-2xl);
   }
-  
+
   .letter-opening {
-    font-size: 2.2rem;
-  }
-  
-  .letter-body {
-    font-size: 1.2rem;
+    font-size: var(--text-2xl);
   }
 }
 
-/* ======================== LAPTOP / DESKTOP ======================== */
+/* ======================== DESKTOP ======================== */
 @media (min-width: 1025px) {
   .letter-container {
-    max-width: 880px;
-    padding: 8rem 5rem 7rem;
+    max-width: var(--max-width);
+    padding: var(--space-3xl) var(--space-lg) var(--space-3xl);
   }
-  
+
   .letter-opening {
-    font-size: 2.8rem;
-    line-height: 1.25;
-    margin-bottom: 3.5rem;
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-xl);
   }
-  
+
   .letter-body {
-    font-size: 1.3rem;
-    line-height: 1.9;
-    max-width: 75ch;
+    max-width: 65ch;
   }
-  
+
   .digest-card {
-    padding: 2.5rem 3rem;
-    margin-bottom: 1.5rem;
+    padding: var(--space-lg);
   }
-  
+
   .digest-card__title {
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
+    font-size: var(--text-lg);
   }
-  
-  .digest-card__excerpt {
-    font-size: 1.15rem;
-    line-height: 1.65;
-  }
-  
-  .digest-list {
-    gap: 1.5rem;
-  }
-  
-  .mood-note {
-    font-size: 1.1rem;
-    padding: 1.5rem 2rem;
-    margin: 3rem 0;
-  }
-  
-  .currently-doing {
-    padding: 2rem 2.5rem;
-    margin: 3.5rem 0;
-  }
-  
-  .currently-doing__content {
-    font-size: 1.25rem;
-  }
-  
+
   .signature-name {
-    font-size: 3.2rem;
+    font-size: var(--text-2xl);
   }
-  
+
   .letter-signature {
-    margin-top: 6rem;
-    padding-top: 3rem;
-  }
-  
-  .quick-links {
-    margin-top: 5rem;
-    gap: 3rem;
-  }
-  
-  .quick-link {
-    font-size: 1.1rem;
+    margin-top: var(--space-3xl);
   }
 }
 
 /* ======================== LARGE SCREENS ======================== */
 @media (min-width: 1440px) {
   .letter-container {
-    max-width: 800px;
-    padding: 8rem 5rem 7rem;
+    max-width: 860px;
   }
-  
+
   .letter-opening {
-    font-size: 3rem;
+    font-size: var(--text-3xl);
   }
 }
 
 /* ======================== MOBILE ======================== */
 @media (max-width: 640px) {
   .letter-container {
-    padding: 5rem 1.5rem 4rem;
+    padding: var(--space-2xl) var(--space-sm) var(--space-xl);
   }
-  
+
   .letter-opening {
-    font-size: 1.6rem;
+    font-size: var(--text-2xl);
   }
-  
+
+  .digest-list {
+    grid-template-columns: 1fr;
+  }
+
+  .digest-list > *:nth-child(even) {
+    margin-top: 0;
+  }
+
   .digest-card {
-    padding: 1.5rem;
+    padding: var(--space-md);
   }
-  
+
   .digest-card__title {
-    font-size: 1.15rem;
+    font-size: var(--text-lg);
   }
-  
+
   .signature-name {
-    font-size: 2rem;
+    font-size: var(--text-xl);
   }
-  
+
   .letter-signature {
     text-align: center;
   }
-  
+
   .quick-links {
     justify-content: center;
-    gap: 1.75rem;
+    gap: var(--space-md);
   }
 }
 </style>';
@@ -545,9 +447,6 @@ $moods = [
 ];
 $todayMood = $moods[array_rand($moods)];
 ?>
-
-<!-- Glassy Background -->
-<div class="glassy-bg" aria-hidden="true"></div>
 
 <!-- Letter -->
 <div class="letter-container">

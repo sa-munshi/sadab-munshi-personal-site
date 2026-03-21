@@ -139,7 +139,7 @@ if ($is_blog_post && isset($post)) {
   <!-- Humans.txt -->
   <link rel="author" type="text/plain" href="/humans.txt">
   
-  <!-- Fonts -->
+  <!-- Fonts — Newsreader (headings) + Manrope (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
