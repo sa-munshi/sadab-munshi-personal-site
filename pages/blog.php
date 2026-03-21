@@ -309,7 +309,7 @@ $extra_css = '<style>
   
   <!-- Page Header -->
   <header class="page-header">
-    <h1 class="page-header__title">Blog <span class="page-header__count">— <?php echo $post_count; ?> posts</span></h1>
+    <h1 class="page-header__title">Blog <span class="page-header__count" aria-label="Total posts: <?php echo $post_count; ?>">— <?php echo $post_count; ?> posts</span></h1>
     <p class="page-header__desc">Thoughts on building, learning, and keeping things simple.</p>
   </header>
   

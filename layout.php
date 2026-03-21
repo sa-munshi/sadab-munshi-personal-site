@@ -70,6 +70,18 @@ if ($is_homepage) {
         'name' => 'Sadab Munshi',
         'url' => 'https://www.sadabmunshi.online'
     ];
+
+    // SiteNavigationElement for sitelinks
+    $schemas[] = [
+        '@context' => 'https://schema.org',
+        '@type' => 'ItemList',
+        'itemListElement' => [
+            ['@type' => 'SiteNavigationElement', 'name' => 'About', 'url' => 'https://www.sadabmunshi.online/about'],
+            ['@type' => 'SiteNavigationElement', 'name' => 'Now', 'url' => 'https://www.sadabmunshi.online/now'],
+            ['@type' => 'SiteNavigationElement', 'name' => 'Projects', 'url' => 'https://www.sadabmunshi.online/projects'],
+            ['@type' => 'SiteNavigationElement', 'name' => 'Blog', 'url' => 'https://www.sadabmunshi.online/blog'],
+        ]
+    ];
 }
 
 // Article schema on blog posts
@@ -121,6 +133,8 @@ if ($is_blog_post && isset($post)) {
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="<?php echo e(config('twitter_handle')); ?>">
+  <meta name="twitter:creator" content="<?php echo e(config('twitter_handle')); ?>">
   <meta name="twitter:url" content="<?php echo $canonical_url; ?>">
   <meta name="twitter:title" content="<?php echo e($full_title); ?>">
   <meta name="twitter:description" content="<?php echo e($page_description); ?>">
