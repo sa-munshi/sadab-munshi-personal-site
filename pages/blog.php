@@ -72,49 +72,35 @@ usort($posts, function($a, $b) {
 });
 
 $extra_css = '<style>
-/* ======================== MINIMAL B&W BLOG ======================== */
-/* Black and white only - newspaper style */
+/* ======================== EDITORIAL BLOG ======================== */
 
 .blog-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
 }
 
-/* Blog Card - Single column, compact */
+.blog-grid > *:nth-child(even) {
+  margin-top: var(--space-lg);
+}
+
+/* Blog Card */
 .blog-card {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  padding: 1rem 1.25rem;
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 16px;
-  transition: all 0.2s ease;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
   position: relative;
   cursor: pointer;
 }
 
-[data-theme="dark"] .blog-card {
-  background: #0a0a0a;
-  border: 1px solid #333333;
-}
-
-/* Hover Effects - subtle */
 .blog-card:hover {
-  border-color: #000000;
-  background: #fafafa;
-}
-
-[data-theme="dark"] .blog-card:hover {
-  border-color: #ffffff;
-  background: #141414;
-}
-
-/* Featured card same as regular - no special styling */
-.blog-card--featured {
-  grid-column: auto;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 /* Card Content */
@@ -129,80 +115,54 @@ $extra_css = '<style>
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.375rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.7rem;
-  color: #666666;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
-[data-theme="dark"] .blog-card__meta {
-  color: #888888;
-}
-
-/* Title - Clean serif */
+/* Title */
 .blog-card__title {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #000000;
-  margin: 0 0 0.375rem 0;
-  line-height: 1.4;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+  margin: 0 0 0.5rem 0;
+  line-height: var(--leading-tight);
 }
 
-[data-theme="dark"] .blog-card__title {
-  color: #ffffff;
-}
-
-.blog-card:hover .blog-card__title {
-  text-decoration: underline;
-}
-
-/* Excerpt - Clean sans */
+/* Excerpt */
 .blog-card__excerpt {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.875rem;
-  color: #444444;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
   margin: 0;
-  line-height: 1.5;
+  line-height: var(--leading-normal);
 }
 
-[data-theme="dark"] .blog-card__excerpt {
-  color: #aaaaaa;
-}
-
-/* Footer - Compact */
+/* Footer */
 .blog-card__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 0.75rem;
-  padding-top: 0.625rem;
-  border-top: 1px solid #f0f0f0;
-}
-
-[data-theme="dark"] .blog-card__footer {
-  border-top-color: #222222;
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
 }
 
 .blog-card__read-time {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.75rem;
-  color: #888888;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
   display: flex;
   align-items: center;
   gap: 0.3rem;
 }
 
-[data-theme="dark"] .blog-card__read-time {
-  color: #666666;
-}
-
 .blog-card__read-time::before {
   content: "◷";
   font-size: 0.8rem;
-  color: #999999;
 }
 
 /* Read More */
@@ -210,37 +170,43 @@ $extra_css = '<style>
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: #000000;
-}
-
-[data-theme="dark"] .blog-card__arrow {
-  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-primary);
 }
 
 .blog-card__arrow::after {
   content: "→";
 }
 
-/* Hide featured badge completely */
+/* Featured same as regular */
+.blog-card--featured {
+  grid-column: auto;
+}
+
 .blog-card__badge {
   display: none;
 }
 
 /* Intro Text */
 .blog-intro {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #444444;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
   max-width: 65ch;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-sm);
 }
 
-[data-theme="dark"] .blog-intro {
-  color: #aaaaaa;
+/* ======================== Responsive ======================== */
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-grid > *:nth-child(even) {
+    margin-top: 0;
+  }
 }
 </style>';
 ?>

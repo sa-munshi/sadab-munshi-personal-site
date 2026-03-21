@@ -14,7 +14,7 @@ $post = [
 <div class="container page-content">
   <article class="content">
     <header style="margin-bottom: 3rem;">
-      <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">
+      <p style="color: var(--color-text-secondary); font-size: 0.875rem; margin-bottom: 0.5rem;">
         <?php echo format_date($post['date']); ?> • <?php echo e($post['reading_time']); ?>
       </p>
       <h1 style="font-size: 2.5rem; line-height: 1.2;"><?php echo e($post['title']); ?></h1>
@@ -86,7 +86,7 @@ $post = [
     
     <hr style="margin: 3rem 0;">
     
-    <p style="color: var(--color-text-muted); font-size: 0.875rem;">
+    <p style="color: var(--color-text-secondary); font-size: 0.875rem;">
       What's your setup like? I'm always curious about how other people work. <a href="/contact/">Let me know</a>.
     </p>
   </article>

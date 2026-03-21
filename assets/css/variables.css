@@ -1,55 +1,40 @@
 /* ═══════════════════════════════════════════════════════
    SADABMUNSHI.ONLINE — CSS VARIABLES
-   Design System Tokens · Glassmorphism Edition
+   Design System Tokens · Editorial Serenity
    ═══════════════════════════════════════════════════════ */
 
 :root {
   /* ─────────────────────────────────────────────────────
-     COLORS — LIGHT MODE (Default)
+     COLORS — Editorial Serenity Palette
      ───────────────────────────────────────────────────── */
-  --color-bg: #F7F5F2;
-  --color-bg-secondary: #EDE9E4;
-  --color-text: #1C1C1C;
-  --color-text-secondary: #6B6B6B;
-  --color-accent: #9A8873;
-  --color-accent-hover: #7D6E5D;
-  --color-border: rgba(180, 170, 158, 0.35);
-  --color-card-bg: rgba(255, 255, 255, 0.55);
-  --color-card-shadow: rgba(0, 0, 0, 0.06);
-  --color-selection-bg: #9A8873;
-  --color-selection-text: #FFFFFF;
-
-  /* Glass tokens — Light */
-  --glass-bg: rgba(255, 255, 255, 0.52);
-  --glass-bg-strong: rgba(255, 255, 255, 0.72);
-  --glass-border: rgba(255, 255, 255, 0.7);
-  --glass-border-subtle: rgba(180, 170, 158, 0.3);
-  --glass-highlight: rgba(255, 255, 255, 0.85);
-  --glass-blur: blur(18px);
-  --glass-blur-light: blur(10px);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.07), 0 1px 0 rgba(255,255,255,0.9) inset;
-
-  /* Ambient orb colors — Light */
-  --orb-purple: rgba(180, 150, 220, 0.22);
-  --orb-cyan: rgba(130, 200, 220, 0.18);
-  --orb-pink: rgba(230, 170, 190, 0.18);
+  --color-bg: #faf9f7;
+  --color-surface: #edeeeb;
+  --color-surface-low: #f3f4f1;
+  --color-white: #ffffff;
+  --color-primary: #4f6354;
+  --color-primary-hover: #3d4f42;
+  --color-text: #2f3331;
+  --color-text-secondary: #5b605e;
+  --color-selection-bg: #4f6354;
+  --color-selection-text: #ffffff;
+  --color-bg-translucent: rgba(250, 249, 247, 0.85);
 
   /* ─────────────────────────────────────────────────────
      TYPOGRAPHY
      ───────────────────────────────────────────────────── */
-  --font-heading: 'Fraunces', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Newsreader', Georgia, serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
   /* Font Sizes */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
-  --text-base: 1.125rem;
+  --text-base: 1.0625rem;
   --text-lg: 1.25rem;
   --text-xl: 1.5rem;
   --text-2xl: 2rem;
   --text-3xl: 3rem;
-  --text-4xl: 4.5rem;
+  --text-4xl: 4.25rem;
 
   /* Font Weights */
   --weight-normal: 400;
@@ -57,32 +42,32 @@
   --weight-semibold: 600;
 
   /* Line Heights */
-  --leading-tight: 1.2;
-  --leading-normal: 1.6;
-  --leading-relaxed: 1.8;
+  --leading-tight: 1.15;
+  --leading-normal: 1.65;
+  --leading-relaxed: 1.85;
 
   /* ─────────────────────────────────────────────────────
-     SPACING
+     SPACING — Generous, architectural
      ───────────────────────────────────────────────────── */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  --space-2xl: 4rem;
-  --space-3xl: 6rem;
-  --space-4xl: 8rem;
+  --space-lg: 2.5rem;
+  --space-xl: 3.5rem;
+  --space-2xl: 5rem;
+  --space-3xl: 7rem;
+  --space-4xl: 9rem;
 
   /* ─────────────────────────────────────────────────────
      LAYOUT
      ───────────────────────────────────────────────────── */
-  --max-width: 680px;
-  --max-width-wide: 1200px;
-  --nav-height: 68px;
-  --border-radius: 16px;
-  --border-radius-lg: 22px;
+  --max-width: 720px;
+  --max-width-wide: 1100px;
+  --nav-height: 64px;
+  --border-radius: 12px;
+  --border-radius-lg: 16px;
   --border-radius-pill: 999px;
-  --border-radius-sm: 10px;
+  --border-radius-sm: 8px;
 
   /* ─────────────────────────────────────────────────────
      TRANSITIONS
@@ -92,48 +77,11 @@
   --transition-slow: 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* ─────────────────────────────────────────────────────
-     SHADOWS
+     SHADOWS — Very subtle, no heavy effects
      ───────────────────────────────────────────────────── */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255,255,255,0.8) inset;
-  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(255,255,255,0.9) inset;
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255,255,255,0.95) inset;
-}
-
-/* ═══════════════════════════════════════════════════════
-   DARK MODE
-   ═══════════════════════════════════════════════════════ */
-
-[data-theme="dark"] {
-  --color-bg: #111113;
-  --color-bg-secondary: #18181C;
-  --color-text: #F0EEF0;
-  --color-text-secondary: #808088;
-  --color-accent: #C4A882;
-  --color-accent-hover: #D4BC9A;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-card-bg: rgba(255, 255, 255, 0.04);
-  --color-card-shadow: rgba(0, 0, 0, 0.3);
-  --color-selection-bg: #C4A882;
-  --color-selection-text: #141414;
-
-  /* Glass tokens — Dark */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-bg-strong: rgba(255, 255, 255, 0.09);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-border-subtle: rgba(255, 255, 255, 0.06);
-  --glass-highlight: rgba(255, 255, 255, 0.1);
-  --glass-blur: blur(18px);
-  --glass-blur-light: blur(10px);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255,255,255,0.08) inset;
-
-  /* Ambient orb colors — Dark (dimmer) */
-  --orb-purple: rgba(140, 100, 200, 0.12);
-  --orb-cyan: rgba(80, 170, 200, 0.1);
-  --orb-pink: rgba(200, 120, 150, 0.1);
-
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -142,19 +90,19 @@
 
 @media (max-width: 768px) {
   :root {
-    --text-xs: 0.8rem;
-    --text-sm: 0.9375rem;     /* 15px — was too small */
-    --text-base: 1.0625rem;   /* 17px — comfortable mobile read */
-    --text-lg: 1.1875rem;     /* 19px */
-    --text-xl: 1.375rem;      /* 22px */
-    --text-2xl: 1.625rem;     /* 26px */
-    --text-3xl: 2.125rem;     /* 34px */
-    --text-4xl: 2.625rem;     /* 42px */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.3rem;
+    --text-2xl: 1.625rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.5rem;
     --space-md: 1.25rem;
     --space-lg: 1.75rem;
-    --space-xl: 2.25rem;
-    --space-2xl: 3rem;
-    --space-3xl: 4rem;
+    --space-xl: 2.5rem;
+    --space-2xl: 3.5rem;
+    --space-3xl: 5rem;
   }
 }
 
@@ -164,44 +112,35 @@
 
 @media (min-width: 769px) and (max-width: 1024px) {
   :root {
-    --text-base: 1.1875rem;   /* 19px */
-    --text-lg: 1.375rem;      /* 22px */
-    --text-xl: 1.625rem;      /* 26px */
-    --text-2xl: 2.25rem;      /* 36px */
-    --text-3xl: 3.25rem;      /* 52px */
-    --max-width: 720px;
+    --text-base: 1.0625rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2.125rem;
+    --text-3xl: 2.75rem;
+    --text-4xl: 3.5rem;
+    --max-width: 680px;
   }
 }
 
 /* ═══════════════════════════════════════════════════════
    RESPONSIVE — LAPTOP/DESKTOP (1025px - 1439px)
-   Optimized for 13"-15" laptop screens
    ═══════════════════════════════════════════════════════ */
 
 @media (min-width: 1025px) and (max-width: 1439px) {
   :root {
-    /* Typography - comfortably readable */
-    --text-base: 1.25rem;     /* 20px - comfortable reading */
-    --text-lg: 1.5rem;        /* 24px - subheadings */
-    --text-xl: 1.875rem;      /* 30px - section headers */
-    --text-2xl: 2.5rem;       /* 40px - page titles */
-    --text-3xl: 3.5rem;       /* 56px - hero titles */
-    --text-4xl: 5rem;         /* 80px - large hero */
-    
-    /* Layout - centered focused layout */
-    --max-width: 900px;
-    --max-width-wide: 900px;
-    
-    /* Spacing - more breathing room */
-    --space-md: 1.75rem;
-    --space-lg: 2.5rem;
-    --space-xl: 3.5rem;
-    --space-2xl: 5rem;
+    --text-base: 1.125rem;
+    --text-lg: 1.375rem;
+    --text-xl: 1.75rem;
+    --text-2xl: 2.5rem;
+    --text-3xl: 3.25rem;
+    --text-4xl: 4.5rem;
+    --max-width: 800px;
+    --max-width-wide: 1000px;
+    --space-xl: 4rem;
+    --space-2xl: 5.5rem;
     --space-3xl: 7rem;
     --space-4xl: 9rem;
-    
-    /* Component sizing */
-    --nav-height: 72px;
+    --nav-height: 68px;
   }
 }
 
@@ -211,15 +150,15 @@
 
 @media (min-width: 1440px) {
   :root {
-    --text-base: 1.375rem;    /* 22px */
-    --text-lg: 1.625rem;      /* 26px */
-    --text-xl: 2rem;          /* 32px */
-    --text-2xl: 3rem;         /* 48px */
-    --text-3xl: 4.5rem;       /* 72px */
-    --text-4xl: 6.5rem;       /* 104px */
-    --max-width: 1000px;
-    --max-width-wide: 1000px;
-    --space-xl: 4rem;
+    --text-base: 1.1875rem;
+    --text-lg: 1.5rem;
+    --text-xl: 1.875rem;
+    --text-2xl: 2.75rem;
+    --text-3xl: 3.75rem;
+    --text-4xl: 5rem;
+    --max-width: 860px;
+    --max-width-wide: 1100px;
+    --space-xl: 4.5rem;
     --space-2xl: 6rem;
     --space-3xl: 8rem;
   }
@@ -231,8 +170,8 @@
 
 @media (min-width: 1920px) {
   :root {
-    --max-width: 1200px;
+    --max-width: 920px;
     --max-width-wide: 1200px;
-    --text-base: 1.5rem;      /* 24px */
+    --text-base: 1.25rem;
   }
 }

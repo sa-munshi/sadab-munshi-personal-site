@@ -86,19 +86,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <style>
 .contact-container {
-  max-width: 600px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: var(--space-lg) 0;
 }
 
 .contact-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: var(--space-xl);
 }
 
 .contact-header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.02em;
 }
 
 .contact-header p {
@@ -106,51 +107,55 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 .contact-card {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
+  background: var(--color-white);
   border-radius: var(--border-radius-lg);
-  padding: 2rem;
-  box-shadow: var(--glass-shadow);
+  padding: var(--space-xl);
 }
 
 .message {
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
+  padding: var(--space-sm);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--space-md);
 }
 
 .message-success {
-  background: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
+  background: #e8f5e9;
+  color: #2e7d32;
 }
 
 .message-error {
-  background: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
+  background: #fce4ec;
+  color: #c62828;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-md);
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+  margin-bottom: var(--space-xs);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-sm);
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
   padding: 0.875rem 1rem;
-  background: rgba(255,255,255,0.5);
-  border: 1px solid var(--glass-border-subtle);
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 1rem;
+  background: var(--color-surface-low);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  transition: background var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background: var(--color-surface);
 }
 
 .form-group textarea {
@@ -160,24 +165,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 .submit-btn {
   width: 100%;
-  padding: 1rem;
-  background: var(--color-text);
-  color: var(--color-bg);
+  padding: var(--space-sm);
+  background: var(--color-primary);
+  color: #ffffff;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+  font-family: var(--font-body);
 }
 
 .submit-btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  background: var(--color-primary-hover);
 }
 
 @media (max-width: 640px) {
   .contact-card {
-    padding: 1.5rem;
+    padding: var(--space-lg);
   }
 }
 </style>

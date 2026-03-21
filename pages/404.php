@@ -6,13 +6,13 @@
 $page_title = 'Page Not Found — Sadab Munshi';
 $page_description = 'Sorry, that page does not exist. Let us get you back on track.';
 ?>
-<div class="container page-content" style="text-align: center; padding: 4rem 0;">
+<div class="container page-content" style="text-align: center; padding: var(--space-3xl) 0;">
   
-  <div style="font-size: 6rem; margin-bottom: 1rem;">¯\_(ツ)_/¯</div>
+  <div style="font-size: 6rem; margin-bottom: var(--space-sm); color: var(--color-surface);">¯\_(ツ)_/¯</div>
   
-  <h1 style="font-size: 2rem; margin-bottom: 1rem;">Page Not Found</h1>
+  <h1 style="font-size: var(--text-2xl); margin-bottom: var(--space-sm);">Page Not Found</h1>
   
-  <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">
+  <p style="color: var(--color-text-secondary); margin-bottom: var(--space-xl);">
     The page you are looking for does not exist.<br>
     Maybe it moved. Maybe it never existed. Maybe you mistyped.
   </p>
