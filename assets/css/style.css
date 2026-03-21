@@ -771,6 +771,16 @@ code {
   z-index: 1;
 }
 
+.footer__logo-link {
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+
+.footer__logo-img {
+  height: 32px;
+  width: auto;
+}
+
 .footer__logo {
   font-family: var(--font-heading);
   font-size: var(--text-lg);

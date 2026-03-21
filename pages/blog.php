@@ -9,6 +9,13 @@ $page_description = 'Writing about what I build, what I break, and what I learn 
 // Blog posts data - all posts
 $posts = [
     [
+        'title' => 'Spend Less Time Counting, More Time Living',
+        'slug' => 'spend-less-time-counting',
+        'excerpt' => 'Why I built a personal finance app that uses AI to handle the boring parts of tracking money.',
+        'date' => '2026-03-22',
+        'reading_time' => '4 min read',
+    ],
+    [
         'title' => 'What I Think About AI',
         'slug' => 'what-i-think-about-ai',
         'excerpt' => 'Artificial intelligence explained humanistically. A simple, honest take on what AI actually is.',
@@ -57,13 +64,6 @@ $posts = [
         'date' => '2025-03-28',
         'reading_time' => '4 min read',
     ],
-    [
-        'title' => 'Things I Use Every Day',
-        'slug' => 'the-tools-i-use-daily',
-        'excerpt' => 'A simple setup. What works for me, nothing complicated.',
-        'date' => '2025-01-10',
-        'reading_time' => '5 min read',
-    ],
 ];
 
 // Sort posts by date (newest first)
@@ -71,18 +71,62 @@ usort($posts, function($a, $b) {
     return strtotime($b['date']) - strtotime($a['date']);
 });
 
+$post_count = count($posts);
+
 $extra_css = '<style>
 /* ======================== EDITORIAL BLOG ======================== */
+
+/* Back Navigation */
+.blog-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  margin-bottom: var(--space-md);
+  transition: color var(--transition-fast);
+}
+
+.blog-back:hover {
+  color: var(--color-primary);
+}
+
+/* Page Header — tighter spacing */
+.blog-page .page-header {
+  padding: var(--space-xl) 0 var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.blog-page .page-header__title {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.blog-page .page-header__desc {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 0.08s;
+  opacity: 0;
+}
+
+/* Post count label */
+.blog-page .page-header__count {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-normal);
+  color: var(--color-text-secondary);
+}
 
 .blog-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-  margin-top: var(--space-lg);
+  gap: var(--space-md);
+  margin-top: var(--space-md);
 }
 
 .blog-grid > *:nth-child(even) {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-md);
 }
 
 /* Blog Card */
@@ -90,17 +134,24 @@ $extra_css = '<style>
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  padding: var(--space-lg);
+  padding: var(--space-md);
   background: var(--color-white);
   border-radius: var(--border-radius);
-  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: box-shadow var(--transition-normal),
+              transform var(--transition-normal),
+              background var(--transition-normal);
   position: relative;
   cursor: pointer;
+  opacity: 0;
+  animation: fadeInUp 0.45s ease forwards;
 }
 
 .blog-card:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  background: var(--color-surface-low);
 }
 
 /* Card Content */
@@ -110,26 +161,33 @@ $extra_css = '<style>
   flex-direction: column;
 }
 
-/* Meta - Date */
+/* Meta - Date Tag */
 .blog-card__meta {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
-  color: var(--color-text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
 }
 
-/* Title */
+.blog-card__date {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: var(--color-surface-low);
+  padding: 0.15em 0.5em;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Title — slightly larger */
 .blog-card__title {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: var(--weight-medium);
   color: var(--color-text);
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.4rem 0;
   line-height: var(--leading-tight);
 }
 
@@ -142,12 +200,12 @@ $extra_css = '<style>
   line-height: var(--leading-normal);
 }
 
-/* Footer */
+/* Footer — read time + arrow on same line */
 .blog-card__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: var(--space-sm);
+  margin-top: auto;
   padding-top: var(--space-sm);
 }
 
@@ -165,19 +223,29 @@ $extra_css = '<style>
   font-size: 0.8rem;
 }
 
-/* Read More */
+/* Read More — accent color, bolder */
 .blog-card__arrow {
   display: flex;
   align-items: center;
   gap: 0.25rem;
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-semibold);
   color: var(--color-primary);
+  transition: gap var(--transition-fast);
 }
 
 .blog-card__arrow::after {
   content: "→";
+  transition: transform 0.2s;
+}
+
+.blog-card:hover .blog-card__arrow {
+  gap: 0.5rem;
+}
+
+.blog-card:hover .blog-card__arrow::after {
+  transform: translateX(3px);
 }
 
 /* Featured same as regular */
@@ -196,7 +264,31 @@ $extra_css = '<style>
   line-height: var(--leading-normal);
   color: var(--color-text-secondary);
   max-width: 65ch;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 0.15s;
+  opacity: 0;
+}
+
+/* Staggered card animations */
+.blog-card:nth-child(1) { animation-delay: 0.10s; }
+.blog-card:nth-child(2) { animation-delay: 0.18s; }
+.blog-card:nth-child(3) { animation-delay: 0.26s; }
+.blog-card:nth-child(4) { animation-delay: 0.34s; }
+.blog-card:nth-child(5) { animation-delay: 0.42s; }
+.blog-card:nth-child(6) { animation-delay: 0.50s; }
+.blog-card:nth-child(7) { animation-delay: 0.58s; }
+.blog-card:nth-child(8) { animation-delay: 0.66s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ======================== Responsive ======================== */
@@ -210,11 +302,14 @@ $extra_css = '<style>
 }
 </style>';
 ?>
-<div class="container page-content">
+<div class="container page-content blog-page">
+  
+  <!-- Back Navigation -->
+  <a href="/" class="blog-back">← Home</a>
   
   <!-- Page Header -->
   <header class="page-header">
-    <h1 class="page-header__title">Writing</h1>
+    <h1 class="page-header__title">Blog <span class="page-header__count" aria-label="Total posts: <?php echo $post_count; ?>">— <?php echo $post_count; ?> posts</span></h1>
     <p class="page-header__desc">Thoughts on building, learning, and keeping things simple.</p>
   </header>
   

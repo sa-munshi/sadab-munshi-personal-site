@@ -38,13 +38,19 @@
   
   <!-- Blog Posts -->
   <url>
-    <loc>https://www.sadabmunshi.online/blog/why-i-started-building-things</loc>
+    <loc>https://www.sadabmunshi.online/blog/spend-less-time-counting</loc>
     <priority>0.6</priority>
     <changefreq>never</changefreq>
   </url>
   
   <url>
-    <loc>https://www.sadabmunshi.online/blog/the-tools-i-use-daily</loc>
+    <loc>https://www.sadabmunshi.online/blog/what-i-think-about-ai</loc>
+    <priority>0.6</priority>
+    <changefreq>never</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://www.sadabmunshi.online/blog/why-i-started-building-things</loc>
     <priority>0.6</priority>
     <changefreq>never</changefreq>
   </url>

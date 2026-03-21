@@ -30,7 +30,7 @@ return [
         ['url' => '/', 'label' => 'Home'],
         ['url' => '/about/', 'label' => 'About'],
         ['url' => '/now/', 'label' => 'Now'],
-        ['url' => '/blog/', 'label' => 'Writing'],
+        ['url' => '/blog/', 'label' => 'Blog'],
         ['url' => '/projects/', 'label' => 'Projects'],
         ['url' => '/contact/', 'label' => 'Contact'],
     ],
