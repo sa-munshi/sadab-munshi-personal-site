@@ -68,16 +68,16 @@ $defaultPosts = [
         'url' => '/blog/why-i-started-building-things/'
     ],
     [
-        'title' => 'Things I Use Every Day',
-        'excerpt' => 'A simple setup that actually works.',
-        'date' => '2025-01-10',
-        'url' => '/blog/the-tools-i-use-daily/'
-    ],
-    [
         'title' => 'Notes on Simplicity',
         'excerpt' => 'Less is usually better.',
         'date' => '2025-05-20',
         'url' => '/blog/notes-on-simplicity/'
+    ],
+    [
+        'title' => 'Learning in Public',
+        'excerpt' => 'The unexpected benefits of sharing while you learn.',
+        'date' => '2025-03-28',
+        'url' => '/blog/learning-in-public/'
     ]
 ];
 
@@ -479,7 +479,7 @@ $todayMood = $moods[array_rand($moods)];
   <!-- Recent Writing - Editorial Digest -->
   <section class="editorial-section">
     <div class="section-header">
-      <h2 class="section-label">Recent Writing</h2>
+      <h2 class="section-label">Latest Posts</h2>
       <a href="/blog/" class="section-link">View all →</a>
     </div>
     
@@ -511,7 +511,7 @@ $todayMood = $moods[array_rand($moods)];
   <!-- Links -->
   <nav class="quick-links">
     <a href="/about/" class="quick-link">About</a>
-    <a href="/blog/" class="quick-link">Writing</a>
+    <a href="/blog/" class="quick-link">Blog</a>
     <a href="/projects/" class="quick-link">Projects</a>
     <a href="/contact/" class="quick-link">Contact</a>
   </nav>
