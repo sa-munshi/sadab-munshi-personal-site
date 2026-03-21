@@ -14,7 +14,7 @@ $post = [
 <div class="container page-content">
   <article class="content">
     <header style="margin-bottom: 3rem;">
-      <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">
+      <p style="color: var(--color-text-secondary); font-size: 0.875rem; margin-bottom: 0.5rem;">
         <?php echo format_date($post['date']); ?> • <?php echo e($post['reading_time']); ?>
       </p>
       <h1 style="font-size: 2.5rem; line-height: 1.2;"><?php echo e($post['title']); ?></h1>
@@ -70,7 +70,7 @@ $post = [
     
     <hr style="margin: 3rem 0;">
     
-    <p style="color: var(--color-text-muted); font-size: 0.875rem;">
+    <p style="color: var(--color-text-secondary); font-size: 0.875rem;">
       Thanks for reading. If this resonated with you, I'd love to hear about what you're building. <a href="/contact/">Get in touch</a>.
     </p>
   </article>

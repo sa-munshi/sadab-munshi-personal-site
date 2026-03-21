@@ -238,7 +238,7 @@ $extra_js = '<script>
 })();
 </script>';
 ?>
-<div class="container page-content" style="max-width: var(--max-width);">
+<div class="container page-content">
   
   <!-- Header -->
   <div class="about-header">

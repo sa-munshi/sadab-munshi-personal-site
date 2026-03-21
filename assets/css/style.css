@@ -215,7 +215,7 @@ code {
   max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
-  background: rgba(250, 249, 247, 0.85);
+  background: var(--color-bg-translucent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   pointer-events: all;
