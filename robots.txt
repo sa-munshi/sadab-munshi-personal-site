@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /pages/contact.php
+Disallow: /pages/watching.php
+Disallow: /pages/colophon.php
+Disallow: /config.php
+Disallow: /functions.php
+Disallow: /includes/
+Disallow: /server.log
+Sitemap: https://www.sadabmunshi.online/sitemap.xml

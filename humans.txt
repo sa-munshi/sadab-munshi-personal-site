@@ -1,0 +1,20 @@
+/* TEAM */
+Author: Sadab Munshi
+Site: https://www.sadabmunshi.online
+Location: India
+Role: Student, Builder, Writer
+
+/* THANKS */
+Moonshot AI — Code assistance and bug fixes
+Claude (Anthropic) — Code help and debugging
+
+/* SITE */
+Last update: 2026-02-23
+Language: English
+Standards: HTML5, CSS3, PHP
+Components: Vanilla JavaScript, Feather Icons
+Software: VS Code, InfinityFree Hosting
+
+/* TECHNOLOGY */
+Built with: PHP 8.0+, HTML5, CSS3, JavaScript
+No frameworks, no database — just clean code
