@@ -6,6 +6,10 @@
  * Include this file in any script that needs DB access.
  */
 
+// Never expose PHP errors to the browser
+error_reporting(0);
+ini_set('display_errors', 0);
+
 $db_host = 'sql101.infinityfree.com';
 $db_user = 'if0_40628266';
 $db_pass = 'iPVcCcKohgE';

@@ -6,6 +6,10 @@
  * statement to prevent SQL injection, and returns a JSON response.
  */
 
+// Never expose PHP errors to the browser
+error_reporting(0);
+ini_set('display_errors', 0);
+
 header('Content-Type: application/json');
 
 // Only allow POST requests

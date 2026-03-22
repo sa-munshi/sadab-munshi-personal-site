@@ -9,6 +9,13 @@
  * Downloads the file instantly as messages.json or messages.csv.
  */
 
+// Never expose PHP errors to the browser
+error_reporting(0);
+ini_set('display_errors', 0);
+
+// Instruct crawlers not to index this admin endpoint
+header('X-Robots-Tag: noindex, nofollow');
+
 define('SECRET_KEY', 'a77c7988d0249e9c98350084d5dd42517f8d1b83e2c43db5126fd0a2d046187b');
 
 $provided_key = isset($_GET['key']) ? $_GET['key'] : '';

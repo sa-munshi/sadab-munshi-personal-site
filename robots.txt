@@ -7,4 +7,8 @@ Disallow: /config.php
 Disallow: /functions.php
 Disallow: /includes/
 Disallow: /server.log
+Disallow: /messages.php
+Disallow: /export.php
+Disallow: /submit.php
+Disallow: /db.php
 Sitemap: https://www.sadabmunshi.online/sitemap.xml
