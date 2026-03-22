@@ -1,11 +1,14 @@
 User-agent: *
 Allow: /
-Disallow: /pages/contact.php
-Disallow: /pages/watching.php
-Disallow: /pages/colophon.php
+Disallow: /contact
+Disallow: /watching
+Disallow: /colophon
 Disallow: /config.php
 Disallow: /functions.php
+Disallow: /layout.php
 Disallow: /includes/
+Disallow: /pages/
+Disallow: /setup.sql
 Disallow: /server.log
 Disallow: /messages.php
 Disallow: /export.php
