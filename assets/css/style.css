@@ -261,6 +261,34 @@ code {
   margin: 0;
 }
 
+/* ─── Circular logo container (header & footer) ─────────────────────────── */
+.logo-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(47, 51, 49, 0.14);
+  background: var(--color-white);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+}
+
+.nav__logo:hover .logo-circle {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(79, 99, 84, 0.1);
+}
+
+.footer__logo-link:hover .logo-circle {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(79, 99, 84, 0.1);
+}
+
 .nav__logo img {
   height: 28px;
   width: auto;

@@ -7,30 +7,31 @@ $page_title = 'Projects — Sadab Munshi';
 $page_description = 'Featured work.';
 
 $extra_css = '<style>
+/* Override default .main padding for this page */
+.main {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 /* ======================== Featured Section ======================== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .featured-section {
-  min-height: 70vh;
-  padding: var(--space-2xl) var(--space-md) var(--space-3xl);
+  padding: var(--space-lg) var(--space-md) var(--space-lg);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   max-width: var(--max-width);
   margin: 0 auto;
+  animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* Section Header */
 .featured-header {
   margin-bottom: var(--space-xl);
-}
-
-.featured-label {
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
-  font-weight: var(--weight-medium);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--color-text-secondary);
-  margin-bottom: 0.5rem;
 }
 
 .featured-title {
@@ -40,6 +41,14 @@ $extra_css = '<style>
   color: var(--color-text);
   margin: 0;
   letter-spacing: -0.02em;
+}
+
+/* ======================== Cards Grid ======================== */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
 }
 
 /* ======================== Featured Card ======================== */
@@ -53,11 +62,19 @@ $extra_css = '<style>
   overflow: hidden;
   transition: box-shadow var(--transition-normal), transform var(--transition-normal);
   background: var(--color-white);
+  box-shadow: var(--shadow-sm);
 }
 
 .featured-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* In-progress card variant */
+.featured-card--muted {
+  background: var(--color-surface-low);
+  opacity: 0.72;
+  pointer-events: none;
 }
 
 /* Card Content */
@@ -84,6 +101,10 @@ $extra_css = '<style>
   font-style: italic;
 }
 
+.featured-card--muted .featured-card__name {
+  color: var(--color-text-secondary);
+}
+
 /* Status */
 .featured-card__status {
   display: flex;
@@ -100,7 +121,7 @@ $extra_css = '<style>
   border-radius: var(--border-radius-pill);
 }
 
-.featured-card__status::before {
+.featured-card__status--live::before {
   content: "";
   width: 8px;
   height: 8px;
@@ -129,6 +150,7 @@ $extra_css = '<style>
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-bottom: var(--space-md);
 }
 
 .featured-card__tag {
@@ -146,34 +168,39 @@ $extra_css = '<style>
   background: var(--color-surface);
 }
 
-/* Arrow indicator */
-.featured-card__arrow {
-  position: absolute;
-  bottom: var(--space-lg);
-  right: var(--space-lg);
-  width: 44px;
-  height: 44px;
+/* Live button */
+.featured-card__actions {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--color-surface-low);
-  color: var(--color-text-secondary);
-  font-size: 1.25rem;
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
-.featured-card:hover .featured-card__arrow {
-  opacity: 1;
-  transform: translateX(0);
+.featured-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-primary);
+  background: transparent;
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--border-radius-pill);
+  padding: 0.45rem 1rem;
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  cursor: pointer;
+}
+
+.featured-card__btn:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
 }
 
 /* ======================== Responsive ======================== */
 @media (max-width: 640px) {
   .featured-section {
-    padding: var(--space-xl) var(--space-sm);
+    padding: var(--space-md) var(--space-sm) var(--space-md);
   }
 
   .featured-title {
@@ -197,10 +224,6 @@ $extra_css = '<style>
   .featured-card__desc {
     max-width: 100%;
   }
-
-  .featured-card__arrow {
-    display: none;
-  }
 }
 </style>';
 ?>
@@ -209,28 +232,48 @@ $extra_css = '<style>
   
   <!-- Section Header -->
   <header class="featured-header">
-    <p class="featured-label">Featured Project</p>
-    <h1 class="featured-title">Selected Work</h1>
+    <h1 class="featured-title">Projects</h1>
   </header>
-  
-  <!-- Featured Card -->
-  <a href="https://app.sadabmunshi.online" target="_blank" rel="noopener noreferrer" class="featured-card">
-    <div class="featured-card__content">
-      
-      <div class="featured-card__header">
-        <h2 class="featured-card__name">FinFlow</h2>
-        <span class="featured-card__status">live</span>
+
+  <div class="projects-grid">
+
+    <!-- FinFlow Card -->
+    <div class="featured-card">
+      <div class="featured-card__content">
+        
+        <div class="featured-card__header">
+          <h2 class="featured-card__name">FinFlow</h2>
+          <span class="featured-card__status featured-card__status--live">live</span>
+        </div>
+        
+        <p class="featured-card__desc">Personal finance tracker with automated categorization and spending forecasts.</p>
+        
+        <div class="featured-card__tags">
+          <span class="featured-card__tag">Next.js</span>
+          <span class="featured-card__tag">TypeScript</span>
+        </div>
+
+        <div class="featured-card__actions">
+          <a href="https://app.sadabmunshi.online" target="_blank" rel="noopener noreferrer" class="featured-card__btn" aria-label="Visit FinFlow — opens in new tab">Live ↗</a>
+        </div>
+
       </div>
-      
-      <p class="featured-card__desc">Personal finance tracker with automated categorization and spending forecasts.</p>
-      
-      <div class="featured-card__tags">
-        <span class="featured-card__tag">Next.js</span>
-        <span class="featured-card__tag">TypeScript</span>
-      </div>
-      
     </div>
-    <span class="featured-card__arrow">→</span>
-  </a>
+
+    <!-- Next Project Card — In Progress -->
+    <div class="featured-card featured-card--muted" role="status" aria-label="Next project — currently in progress">
+      <div class="featured-card__content">
+        
+        <div class="featured-card__header">
+          <h2 class="featured-card__name">Next Project</h2>
+          <span class="featured-card__status">In Progress</span>
+        </div>
+        
+        <p class="featured-card__desc">Currently building. Details soon.</p>
+
+      </div>
+    </div>
+
+  </div>
   
 </div>
