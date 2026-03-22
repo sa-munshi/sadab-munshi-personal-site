@@ -291,6 +291,7 @@ $extra_css = '<style>
   margin: 0 0 0.5rem 0;
   display: inline-block;
   letter-spacing: -0.02em;
+  padding-right: 0.15em;
   background: linear-gradient(
     90deg,
     var(--color-text) 25%,
