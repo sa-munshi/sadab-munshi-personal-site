@@ -269,14 +269,21 @@ code {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1.5px solid rgba(47, 51, 49, 0.14);
-  background: var(--color-white);
+  border: 1.5px solid var(--color-text);
+  background: transparent;
   overflow: hidden;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   font-family: var(--font-heading);
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
   color: var(--color-text);
+}
+
+.logo-circle img {
+  width: 62%;
+  height: 62%;
+  object-fit: contain;
+  display: block;
 }
 
 .nav__logo:hover .logo-circle {
@@ -287,18 +294,6 @@ code {
 .footer__logo-link:hover .logo-circle {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(79, 99, 84, 0.1);
-}
-
-.nav__logo img {
-  height: 28px;
-  width: auto;
-  display: block;
-}
-
-@media (min-width: 1024px) {
-  .nav__logo img {
-    height: 36px;
-  }
 }
 
 .nav__logo:hover {
