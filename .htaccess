@@ -1,8 +1,32 @@
 # Prevent directory listing
 Options -Indexes
 
-# Block direct browser access to the database connection file
-<Files "db.php">
-    Order allow,deny
-    Deny from all
+# ---------------------------------------------------------------
+# URL Rewriting — route all clean URLs through index.php
+# ---------------------------------------------------------------
+RewriteEngine On
+RewriteBase /
+
+# Block direct HTTP access to the pages/ and includes/ directories
+# (these are server-side includes, not public URLs)
+RewriteRule ^(pages|includes)/ - [F,L]
+
+# Pass actual files (CSS, JS, images, fonts, PDFs) and real
+# directories (e.g. /assets/, /resume/) straight through
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Everything else goes to the front-controller
+RewriteRule ^ index.php [L,QSA]
+
+# ---------------------------------------------------------------
+# Security — block direct browser access to backend PHP files
+# ---------------------------------------------------------------
+<FilesMatch "^(db|config|functions|layout)\.php$">
+    Require all denied
+</FilesMatch>
+
+# Block access to the SQL setup script
+<Files "setup.sql">
+    Require all denied
 </Files>
