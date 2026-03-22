@@ -1,0 +1,8 @@
+# Prevent directory listing
+Options -Indexes
+
+# Block direct browser access to the database connection file
+<Files "db.php">
+    Order allow,deny
+    Deny from all
+</Files>
