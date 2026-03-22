@@ -123,25 +123,6 @@
   });
 
   /* ─────────────────────────────────────────────────────
-     READING TIME CALCULATOR (For Blog Posts)
-     ───────────────────────────────────────────────────── */
-  
-  function calculateReadingTime(text) {
-    const wordsPerMinute = 200;
-    const words = text.trim().split(/\s+/).length;
-    const minutes = Math.ceil(words / wordsPerMinute);
-    return minutes;
-  }
-
-  const articleContent = document.querySelector('.content');
-  const readingTimeElement = document.querySelector('.reading-time');
-  
-  if (articleContent && readingTimeElement) {
-    const time = calculateReadingTime(articleContent.textContent);
-    readingTimeElement.textContent = `${time} min read`;
-  }
-
-  /* ─────────────────────────────────────────────────────
      LAZY LOADING IMAGES
      ───────────────────────────────────────────────────── */
   

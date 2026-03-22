@@ -12,11 +12,10 @@
   <nav class="nav" aria-label="Main navigation">
     <!-- Logo: Clickable link to home (left edge) -->
     <a href="/" class="nav__logo" aria-label="Sadab Munshi - Home">
-      <span class="logo-circle">
-        <img src="/assets/images/logo-S.M.png" 
-             alt="Sadab Munshi"
-             onerror="this.style.display='none'; this.parentNode.innerHTML='S.M.';">
-      </span>
+      <img src="/assets/images/logo-S.M.png"
+           class="nav__logo-img"
+           alt="Sadab Munshi"
+           onerror="this.style.display='none'; this.parentNode.textContent='S.M.';">
     </a>
     
     <!-- Navigation Links -->

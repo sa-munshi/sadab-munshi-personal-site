@@ -91,6 +91,7 @@ if ($is_blog_post && isset($post)) {
         '@type' => 'Article',
         'headline' => isset($post['title']) ? $post['title'] : $page_title,
         'url' => $canonical_url,
+        'image' => 'https://www.sadabmunshi.online/assets/images/og-image.png',
         'author' => [
             '@type' => 'Person',
             'name' => 'Sadab Munshi'
@@ -128,8 +129,15 @@ if ($is_blog_post && isset($post)) {
   <meta property="og:title" content="<?php echo e($full_title); ?>">
   <meta property="og:description" content="<?php echo e($page_description); ?>">
   <meta property="og:image" content="https://www.sadabmunshi.online/assets/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Sadab Munshi">
   <meta property="og:locale" content="en_US">
+  <?php if ($is_blog_post && isset($post)): ?>
+  <meta property="article:published_time" content="<?php echo isset($post['date']) ? e($post['date']) : ''; ?>">
+  <meta property="article:modified_time" content="<?php echo isset($post['modified']) ? e($post['modified']) : (isset($post['date']) ? e($post['date']) : ''); ?>">
+  <meta property="article:author" content="Sadab Munshi">
+  <?php endif; ?>
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -156,6 +164,7 @@ if ($is_blog_post && isset($post)) {
   <!-- Fonts — Newsreader (headings) + Manrope (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css">

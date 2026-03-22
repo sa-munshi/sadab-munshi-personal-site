@@ -76,7 +76,7 @@ function asset($path) {
 /**
  * Format date nicely
  */
-function format_date($date, $format = 'M. Y') {
+function format_date($date, $format = 'M j, Y') {
     return date($format, strtotime($date));
 }
 

@@ -5,9 +5,6 @@
 
 @import url('variables.css');
 
-/* Google Fonts — Newsreader (headings) + Manrope (body) */
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
-
 /* ─────────────────────────────────────────────────────
    RESET & BASE
    ───────────────────────────────────────────────────── */
@@ -261,39 +258,19 @@ code {
   margin: 0;
 }
 
-/* ─── Circular logo container (header & footer) ─────────────────────────── */
-.logo-circle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 1.5px solid var(--color-text);
-  background: transparent;
-  overflow: hidden;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-  font-family: var(--font-heading);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-semibold);
-  color: var(--color-text);
-}
-
-.logo-circle img {
-  width: 65%;
-  height: 65%;
-  object-fit: contain;
+/* ─── Logo image (header & footer) ──────────────────────────────────────── */
+.nav__logo-img {
+  height: 48px;
+  width: auto;
   display: block;
+  background: transparent;
 }
 
-.nav__logo:hover .logo-circle {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(79, 99, 84, 0.1);
-}
-
-.footer__logo-link:hover .logo-circle {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(79, 99, 84, 0.1);
+.footer__logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  background: transparent;
 }
 
 .nav__logo:hover {
@@ -421,6 +398,41 @@ code {
     top: calc(48px + 8px);
     max-height: 75vh;
     overflow-y: auto;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   NAVIGATION — INLINE FOR TABLET & DESKTOP (≥769px)
+   ═══════════════════════════════════════════════════════ */
+
+@media (min-width: 769px) {
+  /* Always-visible horizontal nav — no hamburger needed */
+  .nav__links {
+    position: static;
+    flex-direction: row;
+    gap: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    top: auto;
+    left: auto;
+    right: auto;
+  }
+
+  .nav__link {
+    width: auto;
+    font-size: var(--text-sm);
+    padding: 0.6em 0.85em;
+    justify-content: center;
+  }
+
+  /* Hide hamburger button on desktop */
+  .nav__controls {
+    display: none;
   }
 }
 
@@ -797,11 +809,6 @@ code {
 .footer__logo-link {
   display: inline-block;
   margin-bottom: var(--space-md);
-}
-
-.footer__logo-img {
-  height: 32px;
-  width: auto;
 }
 
 .footer__logo {

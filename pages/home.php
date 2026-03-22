@@ -3,7 +3,7 @@
  * HOME PAGE
  * Editorial, polished, content-focused
  */
-$page_title = 'Sadab Munshi';
+$page_title = 'Sadab Munshi — Student, Builder';
 $page_description = 'I learn by building things. Notes on what I make, break, and figure out along the way.';
 
 // Current date with day name in IST: "Sunday, February 22, 2026"
@@ -291,6 +291,7 @@ $extra_css = '<style>
   margin: 0 0 0.5rem 0;
   display: inline-block;
   letter-spacing: -0.02em;
+  padding-right: 0.15em;
   background: linear-gradient(
     90deg,
     var(--color-text) 25%,
@@ -422,15 +423,7 @@ $extra_css = '<style>
 }
 
 /* ======================== MOBILE ======================== */
-@media (max-width: 640px) {
-  .letter-container {
-    padding: var(--space-2xl) var(--space-sm) var(--space-xl);
-  }
-
-  .letter-opening {
-    font-size: var(--text-2xl);
-  }
-
+@media (max-width: 768px) {
   .digest-list {
     grid-template-columns: 1fr;
   }
@@ -441,6 +434,16 @@ $extra_css = '<style>
 
   .digest-card {
     padding: var(--space-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .letter-container {
+    padding: var(--space-2xl) var(--space-sm) var(--space-xl);
+  }
+
+  .letter-opening {
+    font-size: var(--text-2xl);
   }
 
   .digest-card__title {
@@ -481,9 +484,9 @@ $todayMood = $moods[array_rand($moods)];
   </div>
   
   <!-- Opening -->
-  <p class="letter-opening">
+  <h1 class="letter-opening">
     I learn by building things.
-  </p>
+  </h1>
   
   <!-- Body -->
   <div class="letter-body">
@@ -504,7 +507,7 @@ $todayMood = $moods[array_rand($moods)];
   <section class="editorial-section">
     <div class="section-header">
       <h2 class="section-label">Latest Posts</h2>
-      <a href="/blog/" class="section-link">View all →</a>
+      <a href="/blog/" class="section-link">View all blog posts →</a>
     </div>
     
     <div class="digest-list">

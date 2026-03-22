@@ -8,6 +8,7 @@ $page_description = 'Why starting is easy and finishing is everything.';
 $post = [
     'title' => 'The Art of Finishing',
     'date' => '2025-06-14',
+    'modified' => '2025-06-14',
     'reading_time' => '5 min read',
 ];
 ?>

@@ -8,6 +8,7 @@ $page_description = 'What coding taught me about my own thought patterns.';
 $post = [
     'title' => 'Debugging My Brain',
     'date' => '2025-08-03',
+    'modified' => '2025-08-03',
     'reading_time' => '6 min read',
 ];
 ?>

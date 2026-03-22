@@ -8,6 +8,7 @@ $page_description = 'The fear, the vulnerability, and the unexpected benefits of
 $post = [
     'title' => 'Learning in Public',
     'date' => '2025-03-28',
+    'modified' => '2025-03-28',
     'reading_time' => '4 min read',
 ];
 ?>

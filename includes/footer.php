@@ -8,9 +8,10 @@
 <footer class="footer">
   <div class="container">
     <a href="/" class="footer__logo-link" aria-label="Sadab Munshi - Home">
-      <span class="logo-circle">
-        <img src="/assets/images/logo-S.M.png" alt="Sadab Munshi" class="footer__logo-img" onerror="this.style.display='none'; this.parentNode.innerHTML='S.M.';">
-      </span>
+      <img src="/assets/images/logo-S.M.png"
+           class="footer__logo-img"
+           alt="Sadab Munshi"
+           onerror="this.style.display='none'; this.parentNode.textContent='S.M.';">
     </a>
     
     <div class="footer__bottom">
