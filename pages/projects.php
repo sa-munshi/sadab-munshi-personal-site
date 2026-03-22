@@ -4,15 +4,9 @@
  * Featured Work - Single showcase
  */
 $page_title = 'Projects — Sadab Munshi';
-$page_description = 'Featured work.';
+$page_description = 'Projects and web apps built by Sadab Munshi. Personal finance tools, experiments with modern web technologies, and more.';
 
 $extra_css = '<style>
-/* Override default .main padding for this page */
-.main {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 /* ======================== Featured Section ======================== */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(18px); }

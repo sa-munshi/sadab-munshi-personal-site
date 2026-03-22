@@ -8,6 +8,7 @@ $page_description = 'On curiosity, starting small, and creating for yourself.';
 $post = [
     'title' => 'Why I Started Making Things',
     'date' => '2025-12-15',
+    'modified' => '2025-12-15',
     'reading_time' => '4 min read',
 ];
 ?>

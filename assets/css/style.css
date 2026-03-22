@@ -5,9 +5,6 @@
 
 @import url('variables.css');
 
-/* Google Fonts — Newsreader (headings) + Manrope (body) */
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
-
 /* ─────────────────────────────────────────────────────
    RESET & BASE
    ───────────────────────────────────────────────────── */
@@ -401,6 +398,41 @@ code {
     top: calc(48px + 8px);
     max-height: 75vh;
     overflow-y: auto;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   NAVIGATION — INLINE FOR TABLET & DESKTOP (≥769px)
+   ═══════════════════════════════════════════════════════ */
+
+@media (min-width: 769px) {
+  /* Always-visible horizontal nav — no hamburger needed */
+  .nav__links {
+    position: static;
+    flex-direction: row;
+    gap: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    top: auto;
+    left: auto;
+    right: auto;
+  }
+
+  .nav__link {
+    width: auto;
+    font-size: var(--text-sm);
+    padding: 0.6em 0.85em;
+    justify-content: center;
+  }
+
+  /* Hide hamburger button on desktop */
+  .nav__controls {
+    display: none;
   }
 }
 

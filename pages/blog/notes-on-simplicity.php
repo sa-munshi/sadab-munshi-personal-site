@@ -8,6 +8,7 @@ $page_description = 'Less is usually better. Some thoughts on keeping things sim
 $post = [
     'title' => 'Notes on Simplicity',
     'date' => '2025-05-20',
+    'modified' => '2025-05-20',
     'reading_time' => '3 min read',
 ];
 ?>

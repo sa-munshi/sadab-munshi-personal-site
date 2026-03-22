@@ -8,6 +8,7 @@ $page_description = 'Embracing the long, unglamorous path of gradual improvement
 $post = [
     'title' => 'Slow Growth',
     'date' => '2025-11-08',
+    'modified' => '2025-11-08',
     'reading_time' => '5 min read',
 ];
 ?>

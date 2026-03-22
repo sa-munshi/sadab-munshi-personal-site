@@ -12,19 +12,19 @@ $last_updated = 'January 2026';
 // Design sections - easy to add more
 $sections = [
     'Typography' => [
-        ['label' => 'Headings', 'value' => '<a href="https://fonts.google.com/specimen/Fraunces" target="_blank" rel="noopener noreferrer">Fraunces</a>', 'desc' => 'A soft-serif font with character. Editorial feel without being pretentious.'],
-        ['label' => 'Body Text', 'value' => '<a href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener noreferrer">Inter</a>', 'desc' => 'Clean, readable, designed for screens. Gets out of the way.'],
+        ['label' => 'Headings', 'value' => '<a href="https://fonts.google.com/specimen/Newsreader" target="_blank" rel="noopener noreferrer">Newsreader</a>', 'desc' => 'A soft-serif font with character. Editorial feel without being pretentious.'],
+        ['label' => 'Body Text', 'value' => '<a href="https://fonts.google.com/specimen/Manrope" target="_blank" rel="noopener noreferrer">Manrope</a>', 'desc' => 'Clean, readable, designed for screens. Gets out of the way.'],
         ['label' => 'Monospace', 'value' => '<a href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank" rel="noopener noreferrer">JetBrains Mono</a>', 'desc' => 'For code snippets. Clear, legible, developer-friendly.'],
     ],
     'Technology' => [
         ['label' => 'HTML5', 'value' => 'Semantic markup', 'desc' => 'Accessibility-first structure.'],
         ['label' => 'CSS3', 'value' => 'Custom properties', 'desc' => 'No preprocessors, no frameworks. Just clean CSS.'],
         ['label' => 'PHP', 'value' => 'Lightweight templating', 'desc' => 'Simple includes, no heavy frameworks.'],
-        ['label' => 'Vanilla JS', 'value' => 'Minimal interactions', 'desc' => 'Just enough for theme toggle and mobile menu.'],
+        ['label' => 'Vanilla JS', 'value' => 'Minimal interactions', 'desc' => 'Just enough for the mobile menu, easter egg, and smooth interactions.'],
     ],
     'Design' => [
-        ['label' => 'Colors', 'value' => 'Warm neutrals', 'desc' => 'Off-white background, soft black text, bronze accents. Feels like paper and ink.'],
-        ['label' => 'Dark Mode', 'value' => 'Auto + toggle', 'desc' => 'Respects system preference. Toggleable. Preference saved locally.'],
+        ['label' => 'Colors', 'value' => 'Warm neutrals', 'desc' => 'Off-white background, soft black text, green-grey accents. Feels like paper and ink.'],
+        ['label' => 'Color Scheme', 'value' => 'Light only', 'desc' => 'Warm off-white background with soft dark text. Clean and readable in any lighting.'],
         ['label' => 'Layout', 'value' => 'Content-first', 'desc' => 'Max width for readability. Generous whitespace. Mobile-responsive.'],
         ['label' => 'Animations', 'value' => 'Subtle', 'desc' => 'Gentle transitions. Nothing flashy or distracting.'],
     ],
