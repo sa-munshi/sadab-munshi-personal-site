@@ -289,9 +289,33 @@ $extra_css = '<style>
   font-weight: var(--weight-medium);
   font-style: italic;
   margin: 0 0 0.5rem 0;
-  color: var(--color-text);
   display: inline-block;
   letter-spacing: -0.02em;
+  background: linear-gradient(
+    90deg,
+    var(--color-text) 25%,
+    #9aada6 42%,
+    #d4ddd9 50%,
+    #9aada6 58%,
+    var(--color-text) 75%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: signature-shimmer 6s linear infinite;
+}
+
+@keyframes signature-shimmer {
+  0%   { background-position: 100% center; }
+  100% { background-position: -100% center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signature-name {
+    animation: none;
+    background-position: 0% center;
+  }
 }
 
 .signature-title {
